@@ -7,20 +7,41 @@ import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 	// write your code here
 
-        BufferedReader reader=null;
-        try {
+        BufferedReader reader= null;
 
-            reader= new BufferedReader(new FileReader("C:\\JavaLearning1\\ExeceptionReadingFile-JAVA\\src\\com\\company\\sayilar.txt"));
+        int total=0;
+
+        try {
+            reader = new BufferedReader(new FileReader("C:\\JavaLearning1\\ExeceptionReadingFile-JAVA\\src\\com\\company\\sayilar.txt"));
+            String satir= null;
+
+            while ((satir=reader.readLine())!=null)
+            {
+                total+=Integer.valueOf(satir);
+            }
+            System.out.println("Toplam="+total);
         }
         catch (FileNotFoundException fileNotFoundException)
         {
             fileNotFoundException.printStackTrace();
         }
+        catch (Exception exception)
+        {
+            exception.printStackTrace();
+        }
+
         finally {
-            reader.close();
+            try {
+                reader.close();
+            }
+            catch (Exception exception)
+            {
+
+            }
+        }
+
         }
     }
-}
