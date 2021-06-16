@@ -12,7 +12,7 @@ public class Main {
 
         BufferedReader reader= null;
 
-        int total=0;
+        int toplam=0;
 
         try {
             reader = new BufferedReader(new FileReader("C:\\JavaLearning1\\ExeceptionReadingFile-JAVA\\src\\com\\company\\sayilar.txt"));
@@ -20,9 +20,9 @@ public class Main {
 
             while ((satir=reader.readLine())!=null)
             {
-                total+=Integer.valueOf(satir);
+                toplam+=Integer.valueOf(satir);
             }
-            System.out.println("Toplam="+total);
+            System.out.println("Toplam="+toplam);
         }
         catch (FileNotFoundException fileNotFoundException)
         {
